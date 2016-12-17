@@ -11,25 +11,28 @@ using namespace std;
 
 #include <ctime>
 
-char * PasswordGenerator(unsigned int Amount, unsigned int Length);
+void PasswordGenerator(unsigned int Amount, unsigned int Length);
 
 void main(void)
 {
 	srand(unsigned int(0));
 
-	cout << PasswordGenerator(1, 8);
+	PasswordGenerator(1, 8);
+	cout << endl;
+	PasswordGenerator(2, 10);
 
 	system("pause");
 };
 
-char * PasswordGenerator(unsigned int Amount, unsigned int Length)
+void PasswordGenerator(unsigned int Amount, unsigned int Length)
 {
-	char * Password = new char[Length];
-
-	for (unsigned int i = 0; i < Length; i++)
+	for (unsigned i = 0; i < Amount; i++)
 	{
-		Password[i] = rand() % 50 + 35;
+		for (unsigned int i = 0; i < Length; i++)
+		{
+			char temp  = rand() % 57 + 65;
+			cout << temp;
+		}
+		cout << endl;
 	}
-
-	return Password;
 }
